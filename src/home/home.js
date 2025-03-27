@@ -1,4 +1,11 @@
 import "./home.css"
+import star from "./images/misc/star-icon.png"
+import markImg from "./images/reviewers/mark.avif"
+import stevenImg from "./images/reviewers/steven.jpg"
+import ruthImg from "./images/reviewers/ruth.webp"
+import abelImg from "./images/reviewers/abel.jpg"
+
+
 
 export const loadHomePage = function() {
     const mainContentDiv = document.getElementById("content")
@@ -100,7 +107,7 @@ const createReviewSection = function(reviewSec) {
             
             const image = document.createElement("img")
             image.classList.add("review-stars")
-            
+            image.src = star
     
             card.appendChild(button)
             button.appendChild(image)
@@ -131,6 +138,8 @@ const createReviewSection = function(reviewSec) {
         )
     }
 
+    const reviewerImg = [markImg, stevenImg, ruthImg, abelImg]
+    let index = 0
     for (let reviewer in reviewList) {
         const reviewCard = document.createElement("div")
         reviewCard.classList.add("review-cards")
@@ -138,6 +147,8 @@ const createReviewSection = function(reviewSec) {
 
         const image = document.createElement("img")
         image.classList.add("reviewer-image")
+        image.src = reviewerImg[index]
+        index++
         
 
         const reviewerName = document.createElement("h2")
