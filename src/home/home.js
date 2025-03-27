@@ -62,6 +62,9 @@ const createCoffeeSection = function(coffeeSec) {
         const coffeeCard = document.createElement("div")
         coffeeCard.classList.add("coffee-card")
 
+        const textContainer = document.createElement("div")
+        textContainer.classList.add("text-container")
+
         const coffeeName = document.createElement("h2")
         coffeeName.classList.add("coffee-name")
         coffeeName.textContent = coffee
@@ -71,7 +74,8 @@ const createCoffeeSection = function(coffeeSec) {
         coffeeDesc.textContent = coffeeList[coffee]
 
         coffeeContainer.appendChild(coffeeCard)
-        coffeeCard.append(coffeeName, coffeeDesc)
+        textContainer.append(coffeeName, coffeeDesc)
+        coffeeCard.append(textContainer)
     }
 }
 
