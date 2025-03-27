@@ -1,3 +1,5 @@
+import "./home.css"
+
 export const loadHomePage = function() {
     const mainContentDiv = document.getElementById("content")
     
@@ -35,6 +37,11 @@ const createCoffeeSection = function(coffeeSec) {
     const header = document.createElement("h1")
     header.classList.add("coffee-header")
     header.textContent = "Our Favorites"
+    coffeeSec.appendChild(header)
+
+    const coffeeContainer = document.createElement("div")
+    coffeeContainer.classList.add("coffee-container")
+    coffeeSec.appendChild(coffeeContainer)
 
     const coffeeList = {
         "Ethiopian Coffee": "Fruity and floral. Bright acidity, complex aroma. Often has berry or wine-like notes. A tribute to coffee's origin.",
@@ -59,7 +66,7 @@ const createCoffeeSection = function(coffeeSec) {
         coffeeDesc.classList.add("coffee-description")
         coffeeDesc.textContent = coffeeList[coffee]
 
-        coffeeSec.appendChild(coffeeCard)
+        coffeeContainer.appendChild(coffeeCard)
         coffeeCard.append(coffeeName, coffeeDesc)
     }
 }
@@ -68,6 +75,11 @@ const createReviewSection = function(reviewSec) {
     const header = document.createElement("h1")
     header.classList.add("review-header")
     header.textContent = "We have great reviews"
+    reviewSec.appendChild(header)
+
+    const reviewContainer = document.createElement("div")
+    reviewContainer.classList.add("review-container")
+    reviewSec.appendChild(reviewContainer)
 
     const UserReview = (name, review, rating) => {return { name, review, rating }}
 
@@ -114,7 +126,7 @@ const createReviewSection = function(reviewSec) {
     for (let reviewer in reviewList) {
         const reviewCard = document.createElement("div")
         reviewCard.classList.add("review-cards")
-        reviewSec.appendChild(reviewCard)
+        reviewContainer.appendChild(reviewCard)
 
         const image = document.createElement("img")
         image.classList.add("reviewer-image")
