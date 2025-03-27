@@ -39,11 +39,12 @@ const createCoffeeSection = function(coffeeSec) {
     const coffeeList = {
         "Ethiopian Coffee": "Fruity and floral. Bright acidity, complex aroma. Often has berry or wine-like notes. A tribute to coffee's origin.",
         Espresso: "Strong, rich, and bold. The foundation of most coffee drinks. Intense flavor with a slightly bitter finish.",
-        Americano: "Smooth and diluted. Espresso with added hot water. Lighter than espresso but still has depth.",
-        Latte: "Creamy and mellow. Espresso with lots of steamed milk and a light foam topping. Very approachable.",
         Mocha: "Chocolatey and sweet. A latte mixed with chocolate syrup or powder. Perfect for dessert lovers.",
         Cortado: "Bold and balanced. Equal parts espresso and warm milk. Less frothy than a cappuccino.",
-        Affogato: "Sweet and indulgent. A scoop of vanilla ice cream “drowned” in a shot of hot espresso. It's a dessert plus coffee!"
+        Affogato: "Sweet and indulgent. A scoop of vanilla ice cream “drowned” in a shot of hot espresso. It's a dessert plus coffee!",
+        "Avocado Toast": "Sourdough topped with creamy smashed avocado, chili flakes, and a drizzle of olive oil.",
+        "Veggie Wrap": "A tortilla filled with fresh lettuce, tomatoes, cucumber, carrots, and hummus.",
+        "Blueberry Muffin": "Soft, buttery muffin packed with sweet blueberries and a crumb topping."
     }
 
     for (let coffee in coffeeList) {
