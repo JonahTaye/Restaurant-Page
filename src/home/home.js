@@ -21,15 +21,19 @@ export const loadHomePage = function() {
 }
 
 const createSloganSection = function(slogan) {
+    const sloganContainer = document.createElement("div")
+    sloganContainer.classList.add("slogan-container")
+    slogan.appendChild(sloganContainer)
+
     const header = document.createElement("h1")
     header.classList.add("slogan-header")
     header.textContent = "Abyssinia Coffee"
-    slogan.appendChild(header)
+    sloganContainer.appendChild(header)
 
     const para = document.createElement("p")
     para.classList.add("slogan-quote")
     para.textContent = "Where friends come to enjoy!"
-    slogan.appendChild(para)
+    sloganContainer.appendChild(para)
     
 }
 
