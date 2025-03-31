@@ -88,6 +88,9 @@ const createCoffeeItems = function (coffee) {
     const images = require.context('./images/coffee-items', false, /\.jpg$/)
 
     for (let items in coffeeItemsList) {
+        const coffeeCard = document.createElement("div")
+        coffeeCard.classList.add("coffee-card")
+
         const imagePath = images(`./${items}.jpg`)
         
         const image = document.createElement("div")
@@ -110,7 +113,8 @@ const createCoffeeItems = function (coffee) {
         coffeePrice.classList.add("coffee-price")
         coffeePrice.textContent = coffeeItemsList[items].price
 
-        coffeeItemsContainer.append(image, coffeeName, coffeeDesc, coffeePrice)
+        coffeeItemsContainer.appendChild(coffeeCard)
+        coffeeCard.append(image, coffeeName, coffeeDesc, coffeePrice)
     }
 }
 
@@ -171,6 +175,9 @@ const createSideItems = function (side) {
     const images = require.context('./images/side-items', false, /\.jpg$/)
 
     for (let items in sideItemsList) {
+        const sideCard = document.createElement("div")
+        sideCard.classList.add("side-card")
+
         const imagePath = images(`./${items}.jpg`)
         
         const image = document.createElement("div")
@@ -193,7 +200,8 @@ const createSideItems = function (side) {
         sidePrice.classList.add("side-price")
         sidePrice.textContent = sideItemsList[items].price
 
-        sideItemsContainer.append(image, sideName, sideDesc, sidePrice)
+        sideItemsContainer.appendChild(sideCard)
+        sideCard.append(image, sideName, sideDesc, sidePrice)
     }
 }
 
@@ -258,6 +266,9 @@ const createBakedItems = function (bakedGoods) {
     const images = require.context('./images/bakedgoods-items', false, /\.jpg$/)
 
     for (let items in bakedGoodsList) {
+        const bakedGoodsCard = document.createElement("div")
+        bakedGoodsCard.classList.add("bakedgoods-card")
+
         const imagePath = images(`./${items}.jpg`)
         
         const image = document.createElement("div")
@@ -280,6 +291,7 @@ const createBakedItems = function (bakedGoods) {
         bakedItemPrice.classList.add("bakedgoods-price")
         bakedItemPrice.textContent = bakedGoodsList[items].price
 
-        bakedItemsContainer.append(image, bakedItemName, bakedItemDesc, bakedItemPrice)
+        bakedItemsContainer.appendChild(bakedGoodsCard)
+        bakedGoodsCard.append(image, bakedItemName, bakedItemDesc, bakedItemPrice)
     }
 }
