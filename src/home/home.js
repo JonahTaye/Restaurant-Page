@@ -9,18 +9,21 @@ import abelImg from "./images/reviewers/abel.jpg"
 
 export const loadHomePage = function() {
     const mainContentDiv = document.getElementById("content")
+    const homeContentDiv = document.createElement("div")
+    homeContentDiv.classList.add("home-content")
+    mainContentDiv.appendChild(homeContentDiv)
     
     const sloganSection = document.createElement("div")
     sloganSection.classList.add("slogan-section")
-    mainContentDiv.appendChild(sloganSection)
+    homeContentDiv.appendChild(sloganSection)
     
     const coffeeSection = document.createElement("div")
     coffeeSection.classList.add("coffee-section")
-    mainContentDiv.appendChild(coffeeSection)
+    homeContentDiv.appendChild(coffeeSection)
 
     const reviewSection = document.createElement("div")
     reviewSection.classList.add("review-section")
-    mainContentDiv.appendChild(reviewSection)
+    homeContentDiv.appendChild(reviewSection)
 
     createSloganSection(sloganSection)
     createCoffeeSection(coffeeSection)
