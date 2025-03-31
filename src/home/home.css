@@ -4,6 +4,42 @@
     /* border: 1px red solid; */
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+body {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    display: flex;
+    flex-direction: column;
+    min-width: fit-content;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgb(219, 219, 124);
+}
+
+.logo {
+    text-align: center;
+    padding: 1rem;
+    font-size: clamp(1.4rem, 3vw, 3rem);
+}
+
+.nav-btns {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+button {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    padding: 1vw 2vw;
+    font-size: clamp(1rem, 1.6vw, 1.8rem);
+    background-color: transparent;
+    border: none; 
+}
+
 .home-content {
     display: grid;
     grid-template-columns: 30vw 1fr;
