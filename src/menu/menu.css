@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px red solid; */
+}
+
+.menu-content {
+    display: block;
+    padding: 1rem;
+}
+
+.menu-coffee-header, .menu-side-header, .menu-bakedgoods-header {
+    padding-top: 1rem;
+    border-top: 0.3rem black solid;
+}
+
+.menu-coffee-header {
+    border-top: none;
+}
+
+.menu-coffee-container, .menu-side-container, .menu-bakedgoods-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 540px);
+    row-gap: 2rem;
+    column-gap: 8rem;
+    padding: 2rem;
+}
+
+.menu-text-container {
+    width: 0;
+}
+
+.menu-coffee-card, .menu-side-card, .menu-bakedgoods-card{
+    position: relative;
+    display: inline-grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 1rem; */
+    padding: 1rem;
+    border-left: 0.2rem solid black;
+    border-top: 0.2rem solid black;
+}
+
+
+.menu-image{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 15rem;
+    background-position: center;
+}
+
+.menu-coffee-name, .menu-side-name, .menu-bakedgoods-name {
+    padding: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 900;
+    width: 10rem;
+    height: 10rem;
+    color: white;
+    background-color: black;
+    position: relative;
+    right: 25rem;
+    top: 1rem;
+    border-radius: 50%;
+    border: 0.35rem white dashed;
+    outline: 0.8rem black solid;
+}
+
+.menu-coffee-description, .menu-side-description, .menu-bakedgoods-description{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 15rem;
+    height: 15rem;
+    font-size: 1.2rem;
+    position: relative;
+    right: 3rem;
+    background-color: rgba(236, 236, 110, 0.822);
+    color: rgb(0, 0, 0);
+    border-radius: 8rem;
+}
+
+.menu-coffee-price, .menu-side-price, .menu-bakedgoods-price {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    border: 0.15rem black solid;
+    border-radius: 50%;
+    position: relative;
+    right: 5rem;
+    bottom: 5rem;
+}
