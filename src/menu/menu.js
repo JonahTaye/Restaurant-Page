@@ -1,3 +1,5 @@
+import "./menu.css"
+
 export const loadMenuPage = function () {
     const mainContentDiv = document.getElementById("content")
 
@@ -67,11 +69,6 @@ const createCoffeeItems = function (coffee) {
             "Vanilla ice cream drowned in a shot of hot espresso. Dessert and coffee in one.",
             "89.99 ETB"
         ),
-        flatWhite: Item(
-            "Flat White",
-            "Espresso with velvety steamed milk. Stronger than a latte, but smoother than a cappuccino.",
-            "89.99 ETB"
-        ),
         macchiato: Item(
             "Macchiato",
             "Espresso with a dollop of frothy milk. Bold with just a touch of creaminess.",
@@ -82,27 +79,24 @@ const createCoffeeItems = function (coffee) {
             "A classic! Equal parts espresso, steamed milk, and milk foam. Frothy and flavorful.",
             "79.99 ETB"
         ),
-        irish: Item(
-            "Irish Coffee",
-            "Hot coffee mixed with Irish whiskey, sugar, and topped with cream. A cozy classic.",
-            "99.99 ETB"
-        ),
-        vienna: Item(
-            "Vienna Coffee",
-            "Two shots of espresso topped with whipped cream instead of milk or foam.",
-            "89.99 ETB"
-        ),
         turkish: Item(
             "Turkish Coffee",
             "Finely ground coffee simmered in a pot with sugar and cardamom — thick, strong, and aromatic.",
             "89.99 ETB"
         ),
     }
+    const images = require.context('./images/coffee-items', false, /\.jpg$/)
 
     for (let items in coffeeItemsList) {
-        console.log(items, coffeeItemsList[items])
-        const image = document.createElement("img")
-        image.classList.add("coffee-items-image")
+        const imagePath = images(`./${items}.jpg`)
+        
+        const image = document.createElement("div")
+        image.classList.add("image")
+        image.style.backgroundImage = `url(${imagePath})`
+        image.style.backgroundSize = 'cover'
+        image.style.backgroundRepeat = 'no-repeat'
+        image.style.width = '25vw'
+        image.style.height = '25vw'
 
         const coffeeName = document.createElement("div")
         coffeeName.classList.add("coffee-name")
@@ -139,10 +133,10 @@ const createSideItems = function (side) {
         ),
         breakfastSandwich: Item(
             "Breakfast Sandwich",
-            "Egg, cheese, and your choice of bacon or sausage on a toasted English muffin.",
+            "Egg, cheese, and your choice of bacon or sausage on a toasted English bread.",
             "229.99 ETB"
         ),
-        vaggieWrap: Item(
+        veggieWrap: Item(
             "Veggie Wrap",
             "A tortilla filled with fresh lettuce, tomatoes, cucumber, carrots, and hummus.",
             "399.99 ETB"
@@ -174,9 +168,18 @@ const createSideItems = function (side) {
         )
     }
 
+    const images = require.context('./images/side-items', false, /\.jpg$/)
+
     for (let items in sideItemsList) {
-        const image = document.createElement("img")
-        image.classList.add("side-items-image")
+        const imagePath = images(`./${items}.jpg`)
+        
+        const image = document.createElement("div")
+        image.classList.add("image")
+        image.style.backgroundImage = `url(${imagePath})`
+        image.style.backgroundSize = 'cover'
+        image.style.backgroundRepeat = 'no-repeat'
+        image.style.width = '25vw'
+        image.style.height = '25vw'
 
         const sideName = document.createElement("div")
         sideName.classList.add("side-name")
@@ -230,11 +233,6 @@ const createBakedItems = function (bakedGoods) {
           "Moist and flavorful banana bread made with ripe bananas and a hint of spice.",
           "229.99 ETB"
         ),
-        almondCroissant: Item(
-          "Almond Croissant",
-          "Light and flaky pastry filled with sweet almond paste and topped with sliced almonds.",
-          "299.99 ETB"
-        ),
         appleTurnover: Item(
           "Apple Turnover",
           "Golden pastry filled with spiced apple filling. Crispy, sweet, and satisfying.",
@@ -257,9 +255,18 @@ const createBakedItems = function (bakedGoods) {
         )
       }
 
+    const images = require.context('./images/bakedgoods-items', false, /\.jpg$/)
+
     for (let items in bakedGoodsList) {
-        const image = document.createElement("img")
-        image.classList.add("bakedgoods-image")
+        const imagePath = images(`./${items}.jpg`)
+        
+        const image = document.createElement("div")
+        image.classList.add("image")
+        image.style.backgroundImage = `url(${imagePath})`
+        image.style.backgroundSize = 'cover'
+        image.style.backgroundRepeat = 'no-repeat'
+        image.style.width = '25vw'
+        image.style.height = '25vw'
 
         const bakedItemName = document.createElement("div")
         bakedItemName.classList.add("bakedgoods-name")
