@@ -11,14 +11,14 @@ export const loadAboutPage = function () {
     contentContainer.appendChild(header)
 
     const para = document.createElement("p")
-    para.className.add("about-para")
+    para.classList.add("about-para")
     para.textContent = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                         Quia culpa facilis ea laborum voluptatum? Laborum, culpa et. Nesciunt, fugit pariatur! 
                         A distinctio quam dicta, explicabo voluptate non? Consequuntur, animi voluptatibus!`
     contentContainer.appendChild(para)
 
     const button = document.createElement("button")
-    button.className.add("about-btn")
+    button.classList.add("about-btn")
     button.textContent = "Visit Us"
     contentContainer.appendChild(button)
 }
