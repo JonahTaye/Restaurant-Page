@@ -1,3 +1,5 @@
+import "./about.css"
+
 export const loadAboutPage = function () {
     const mainContentDiv = document.getElementById("content")
     
