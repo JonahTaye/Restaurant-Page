@@ -100,16 +100,17 @@ const createReviewSection = function(reviewSec) {
 
     const generateReviewStars = function(rating, card) {
         console.log(rating)
+        const button = document.createElement("span")
+        button.classList.add("review-star-container")
+        card.appendChild(button)
+
         for (let i = 1; i <= rating; i++) {
             console.log(rating)
-            const button = document.createElement("span")
-            button.classList.add("review-star-container")
             
             const image = document.createElement("img")
             image.classList.add("review-stars")
             image.src = star
     
-            card.appendChild(button)
             button.appendChild(image)
         }
     
