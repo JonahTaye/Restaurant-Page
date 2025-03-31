@@ -4,7 +4,7 @@
     /* border: 1px red solid; */
 }
 
-#content {
+.home-content {
     display: grid;
     grid-template-columns: 30vw 1fr;
 }
