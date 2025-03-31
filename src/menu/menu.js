@@ -1,19 +1,22 @@
-import "./menu.css"
+import styles from "./menu.css"
 
 export const loadMenuPage = function () {
     const mainContentDiv = document.getElementById("content")
+    const menuContentDiv = document.createElement("div")
+    menuContentDiv.classList.add("menu-content")
+    mainContentDiv.appendChild(menuContentDiv)
 
     const coffeeItems = document.createElement("div")
-    coffeeItems.classList.add("coffee-items")
-    mainContentDiv.appendChild(coffeeItems)
+    coffeeItems.classList.add("menu-coffee-items")
+    menuContentDiv.appendChild(coffeeItems)
 
     const sideItems = document.createElement("div")
-    sideItems.classList.add("side-items")
-    mainContentDiv.appendChild(sideItems)
+    sideItems.classList.add("menu-side-items")
+    menuContentDiv.appendChild(sideItems)
 
     const bakedItems = document.createElement("div")
-    bakedItems.classList.add("baked-items")
-    mainContentDiv.appendChild(bakedItems)
+    bakedItems.classList.add("menu-baked-items")
+    menuContentDiv.appendChild(bakedItems)
 
     createCoffeeItems(coffeeItems)
     createSideItems(sideItems)
@@ -24,12 +27,12 @@ const Item = (name, description, price) => ({ name, description, price })
 
 const createCoffeeItems = function (coffee) {
     const header = document.createElement("h1")
-    header.classList.add("coffee-header")
+    header.classList.add("menu-coffee-header")
     header.textContent = "Coffees"
     coffee.appendChild(header)
 
     const coffeeItemsContainer = document.createElement("div")
-    coffeeItemsContainer.classList.add("coffee-container")
+    coffeeItemsContainer.classList.add("menu-coffee-container")
     coffee.appendChild(coffeeItemsContainer)
 
 
@@ -89,43 +92,45 @@ const createCoffeeItems = function (coffee) {
 
     for (let items in coffeeItemsList) {
         const coffeeCard = document.createElement("div")
-        coffeeCard.classList.add("coffee-card")
+        coffeeCard.classList.add("menu-coffee-card")
+
+        const textContainer = document.createElement("div")
+        textContainer.classList.add("menu-text-container")
 
         const imagePath = images(`./${items}.jpg`)
         
         const image = document.createElement("div")
-        image.classList.add("image")
+        image.classList.add("menu-image")
         image.style.backgroundImage = `url(${imagePath})`
         image.style.backgroundSize = 'cover'
         image.style.backgroundRepeat = 'no-repeat'
-        image.style.width = '25vw'
-        image.style.height = '25vw'
 
         const coffeeName = document.createElement("div")
-        coffeeName.classList.add("coffee-name")
+        coffeeName.classList.add("menu-coffee-name")
         coffeeName.textContent = coffeeItemsList[items].name
 
         const coffeeDesc = document.createElement("div")
-        coffeeDesc.classList.add("coffee-description")
+        coffeeDesc.classList.add("menu-coffee-description")
         coffeeDesc.textContent = coffeeItemsList[items].description
 
         const coffeePrice = document.createElement("div")
-        coffeePrice.classList.add("coffee-price")
+        coffeePrice.classList.add("menu-coffee-price")
         coffeePrice.textContent = coffeeItemsList[items].price
 
         coffeeItemsContainer.appendChild(coffeeCard)
-        coffeeCard.append(image, coffeeName, coffeeDesc, coffeePrice)
+        textContainer.append(coffeeName, coffeePrice, coffeeDesc)
+        coffeeCard.append(image, textContainer)
     }
 }
 
 const createSideItems = function (side) {
     const header = document.createElement("h1")
-    header.classList.add("side-header")
+    header.classList.add("menu-side-header")
     header.textContent = "Tasty Sides"
     side.appendChild(header)
 
     const sideItemsContainer = document.createElement("div")
-    sideItemsContainer.classList.add("side-container")
+    sideItemsContainer.classList.add("menu-side-container")
     side.appendChild(sideItemsContainer)
 
 
@@ -176,43 +181,45 @@ const createSideItems = function (side) {
 
     for (let items in sideItemsList) {
         const sideCard = document.createElement("div")
-        sideCard.classList.add("side-card")
+        sideCard.classList.add("menu-side-card")
+
+        const textContainer = document.createElement("div")
+        textContainer.classList.add("menu-text-container")
 
         const imagePath = images(`./${items}.jpg`)
         
         const image = document.createElement("div")
-        image.classList.add("image")
+        image.classList.add("menu-image")
         image.style.backgroundImage = `url(${imagePath})`
         image.style.backgroundSize = 'cover'
         image.style.backgroundRepeat = 'no-repeat'
-        image.style.width = '25vw'
-        image.style.height = '25vw'
 
         const sideName = document.createElement("div")
-        sideName.classList.add("side-name")
+        sideName.classList.add("menu-side-name")
         sideName.textContent = sideItemsList[items].name
 
         const sideDesc = document.createElement("div")
-        sideDesc.classList.add("side-description")
+        sideDesc.classList.add("menu-side-description")
         sideDesc.textContent = sideItemsList[items].description
 
         const sidePrice = document.createElement("div")
-        sidePrice.classList.add("side-price")
+        sidePrice.classList.add("menu-side-price")
         sidePrice.textContent = sideItemsList[items].price
 
         sideItemsContainer.appendChild(sideCard)
-        sideCard.append(image, sideName, sideDesc, sidePrice)
+        textContainer.append(sideName, sidePrice, sideDesc)
+        sideCard.append(image, textContainer)
     }
 }
 
 const createBakedItems = function (bakedGoods) {
     const header = document.createElement("h1")
-    header.classList.add("bakedgoods-header")
+    header.classList.add("menu-bakedgoods-header")
     header.textContent = "Baked Goods"
     bakedGoods.appendChild(header)
 
     const bakedItemsContainer = document.createElement("div")
-    bakedItemsContainer.classList.add("bakedgoods-container")
+    bakedItemsContainer.classList.add("menu-bakedgoods-container")
     bakedGoods.appendChild(bakedItemsContainer)
 
     const bakedGoodsList = {
@@ -267,31 +274,33 @@ const createBakedItems = function (bakedGoods) {
 
     for (let items in bakedGoodsList) {
         const bakedGoodsCard = document.createElement("div")
-        bakedGoodsCard.classList.add("bakedgoods-card")
+        bakedGoodsCard.classList.add("menu-bakedgoods-card")
+
+        const textContainer = document.createElement("div")
+        textContainer.classList.add("menu-text-container")
 
         const imagePath = images(`./${items}.jpg`)
         
         const image = document.createElement("div")
-        image.classList.add("image")
+        image.classList.add("menu-image")
         image.style.backgroundImage = `url(${imagePath})`
         image.style.backgroundSize = 'cover'
         image.style.backgroundRepeat = 'no-repeat'
-        image.style.width = '25vw'
-        image.style.height = '25vw'
 
         const bakedItemName = document.createElement("div")
-        bakedItemName.classList.add("bakedgoods-name")
+        bakedItemName.classList.add("menu-bakedgoods-name")
         bakedItemName.textContent = bakedGoodsList[items].name
 
         const bakedItemDesc = document.createElement("div")
-        bakedItemDesc.classList.add("bakedgoods-description")
+        bakedItemDesc.classList.add("menu-bakedgoods-description")
         bakedItemDesc.textContent = bakedGoodsList[items].description
 
         const bakedItemPrice = document.createElement("div")
-        bakedItemPrice.classList.add("bakedgoods-price")
+        bakedItemPrice.classList.add("menu-bakedgoods-price")
         bakedItemPrice.textContent = bakedGoodsList[items].price
 
         bakedItemsContainer.appendChild(bakedGoodsCard)
-        bakedGoodsCard.append(image, bakedItemName, bakedItemDesc, bakedItemPrice)
+        textContainer.append(bakedItemName, bakedItemPrice, bakedItemDesc)
+        bakedGoodsCard.append(image, textContainer)
     }
 }
