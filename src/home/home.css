@@ -13,14 +13,16 @@ body {
     flex-direction: column;
     min-width: fit-content;
     min-height: 100vh;
+    color: #1B0902;
 }
 
 header {
-    background-color: #E2C589;
+    background-color: #eeb48b;
 }
 
 .logo {
     text-align: center;
+    text-transform: uppercase;
     font-size: clamp(1.4rem, 3vw, 3rem);
 }
 
@@ -39,6 +41,15 @@ button {
     border: none; 
 }
 
+.nav-btns button {
+    color: #1B0902;
+}
+
+.nav-btn.selected {
+    color: #E4E1DC;
+}
+  
+
 .home-content {
     display: grid;
     grid-template-columns: 30vw 1fr;
@@ -54,17 +65,41 @@ button {
 .slogan-container {
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.103);
+    background-color: rgba(0, 0, 0, 0.418);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 1rem;
+    padding-top: 10rem;
+    color: #E4E1DC;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.top-container .slogan-header {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 5rem);
+}
+
+.slogan-quote {
+    font-size: clamp(1.1rem, 2vw, 3rem);
+}
+
+.slogan-description {
+    padding: 2.5rem;
+    font-size: clamp(1.1rem, 1.4vw, 3rem);
+    text-align: justify;
 }
 
 .coffee-section {
     padding: 2rem;
-
+    background-color: #32221b;
+    color: #eeb48b;
 }
 
 .coffee-header {
@@ -97,11 +132,13 @@ button {
     justify-content: flex-end;
     flex-direction: column;
     opacity: 0;
+    border-top-left-radius: 8rem;
+    border-bottom-right-radius: 8rem;
 }
 
 .coffee-card:hover .text-container{
     opacity: 1;
-    background-color: rgba(255, 255, 255, 0.301);
+    background-color: rgba(0, 0, 0, 0.466);
     padding-bottom: 10rem;
     transition: padding-bottom ease-in 500ms, opacity ease-in 500ms;
 }
@@ -167,6 +204,7 @@ button {
 .review-section {
     grid-column: 1 / 3;
     padding: 1rem;
+    background-color: #A47D6E;
 }
 
 .review-container {

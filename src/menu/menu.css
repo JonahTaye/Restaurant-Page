@@ -7,11 +7,11 @@
 
 .menu-content {
     display: block;
-    padding: 1rem;
+    /* padding: 1rem; */
 }
 
 .menu-coffee-header, .menu-side-header, .menu-bakedgoods-header {
-    padding-top: 1rem;
+    padding-top: 2rem;
     border-top: 0.3rem black solid;
 }
 
@@ -25,6 +25,21 @@
     row-gap: 2rem;
     column-gap: 8rem;
     padding: 2rem;
+}
+
+.menu-coffee-items {
+    background-color: #584137;
+    padding: 1rem;
+}
+
+.menu-side-items {
+    background: linear-gradient(180deg, rgba(88,65,55,1) 0.5%, rgba(164,125,110,1) 2%);
+    padding: 1rem;
+} 
+
+.menu-baked-items {
+    background: linear-gradient(180deg, rgb(164, 125, 110) 0.5%, rgb(197, 159, 144) 2%);
+    padding: 1rem;
 }
 
 .menu-text-container {
@@ -41,6 +56,7 @@
     padding: 1rem;
     border-left: 0.2rem solid black;
     border-top: 0.2rem solid black;
+    /* box-shadow: inset 8px 10px 10px 0px rgba(0, 0, 0, 0.56); */
 }
 
 
@@ -71,6 +87,27 @@
     outline: 0.8rem black solid;
 }
 
+.menu-coffee-name {
+    background-color: #1B0902;
+    color: #eeb48b;
+    outline-color: #1B0902;
+    border-color: #eeb48b;
+}
+
+.menu-side-name {
+    background-color: #eeb48b;
+    color: #1B0902;
+    outline-color: #eeb48b;
+    border-color: #1B0902;
+}
+
+.menu-bakedgoods-name {
+    background-color: #32221b;
+    color: #eeb48b;
+    outline-color: #32221b;
+    border-color: #eeb48b;
+}
+
 .menu-coffee-description, .menu-side-description, .menu-bakedgoods-description{
     padding: 1rem;
     display: flex;
@@ -87,6 +124,21 @@
     border-radius: 8rem;
 }
 
+.menu-coffee-description {
+    background-color: #eeb48b;
+    color: #1B0902;
+}
+
+.menu-side-description {
+    background-color: #32221b;
+    color: #eeb48b;
+}
+
+.menu-bakedgoods-description {
+    background-color: #1b0902;
+    color: #eeb48b;
+}
+
 .menu-coffee-price, .menu-side-price, .menu-bakedgoods-price {
     width: 6rem;
     height: 6rem;
@@ -94,10 +146,25 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-weight: 500;
     background-color: white;
     border: 0.15rem black solid;
     border-radius: 50%;
     position: relative;
     right: 5rem;
     bottom: 5rem;
+}
+
+.menu-coffee-price {
+    background-color: #CEA07E;
+}
+
+.menu-side-price {
+    background-color: #180802;
+    color: #CEA07E;
+    border: none;
+}
+
+.menu-bakedgoods-price {
+    background-color: #CEA07E;
 }
