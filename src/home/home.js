@@ -1,5 +1,5 @@
 import "./home.css"
-import star from "./images/misc/star-icon.png"
+import star from "./images/misc/star-icon.svg"
 import markImg from "./images/reviewers/mark.avif"
 import stevenImg from "./images/reviewers/steven.jpg"
 import ruthImg from "./images/reviewers/ruth.webp"
