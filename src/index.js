@@ -6,6 +6,7 @@ const home = document.querySelector(".home")
 const menu = document.querySelector(".menu")
 const about = document.querySelector(".about")
 const content = document.getElementById("content")
+const buttons = document.querySelectorAll('.nav-btn');
 
 loadHomePage()
 
@@ -23,3 +24,10 @@ about.addEventListener("click", () => {
     content.innerHTML = ""
     loadAboutPage()
 })
+
+buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('selected')) 
+      btn.classList.add('selected')
+    })
+  })
