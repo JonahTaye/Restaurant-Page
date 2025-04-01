@@ -14,9 +14,12 @@ export const loadAboutPage = function () {
 
     const para = document.createElement("p")
     para.classList.add("about-para")
-    para.textContent = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Quia culpa facilis ea laborum voluptatum? Laborum, culpa et. Nesciunt, fugit pariatur! 
-                        A distinctio quam dicta, explicabo voluptate non? Consequuntur, animi voluptatibus!`
+    para.textContent = `At Abyssinia Coffee, every cup tells a story of purity, tradition, and care. 
+                        Our beans are organically grown in the rich highlands of Ethiopia, nurtured without 
+                        synthetic fertilizers or harmful chemicals. From seed to sip, we honor sustainable 
+                        farming methods that protect the land and preserve the natural essence of each bean. 
+                        The result? A bold, rich, and clean flavor that lets you taste the earth's goodness in 
+                        every brew.`
     contentContainer.appendChild(para)
 
     const button = document.createElement("button")
