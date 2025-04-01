@@ -7,16 +7,16 @@ import abelImg from "./images/reviewers/abel.jpg"
 
 
 
-export const loadHomePage = function() {
+export const loadHomePage = function () {
     const mainContentDiv = document.getElementById("content")
     const homeContentDiv = document.createElement("div")
     homeContentDiv.classList.add("home-content")
     mainContentDiv.appendChild(homeContentDiv)
-    
+
     const sloganSection = document.createElement("div")
     sloganSection.classList.add("slogan-section")
     homeContentDiv.appendChild(sloganSection)
-    
+
     const coffeeSection = document.createElement("div")
     coffeeSection.classList.add("coffee-section")
     homeContentDiv.appendChild(coffeeSection)
@@ -30,24 +30,46 @@ export const loadHomePage = function() {
     createReviewSection(reviewSection)
 }
 
-const createSloganSection = function(slogan) {
+const createSloganSection = function (slogan) {
     const sloganContainer = document.createElement("div")
     sloganContainer.classList.add("slogan-container")
     slogan.appendChild(sloganContainer)
 
+    const topContainer = document.createElement("div")
+    topContainer.classList.add("top-container")
+    sloganContainer.appendChild(topContainer)
+
+    const bottomContainer = document.createElement("div")
+    bottomContainer.classList.add("bottom-container")
+    sloganContainer.appendChild(bottomContainer)
+
     const header = document.createElement("h1")
     header.classList.add("slogan-header")
     header.textContent = "Abyssinia Coffee"
-    sloganContainer.appendChild(header)
+    topContainer.appendChild(header)
 
-    const para = document.createElement("p")
-    para.classList.add("slogan-quote")
-    para.textContent = "Where friends come to enjoy!"
-    sloganContainer.appendChild(para)
-    
+    const para1 = document.createElement("p")
+    para1.classList.add("slogan-quote")
+    para1.textContent = "Where friends come to enjoy!"
+    topContainer.appendChild(para1)
+
+    const para2 = document.createElement("p")
+    para2.classList.add("slogan-description")
+    para2.innerHTML = `At Abyssinia Coffee, we're more than just a coffee house — we're a celebration of 
+                        Ethiopia's rich coffee heritage.<br><br>
+                        Step into the world of Abyssinia Coffee, where every cup tells a story — a story steeped in culture, warmth, and the rich traditions of Ethiopia, the birthplace of coffee.<br><br>
+                        From bold espressos to creamy lattes, and from hand-roasted Ethiopian blends to delightful baked goods, everything we serve is crafted with intention. Our passion lies not just in brewing exceptional coffee, but in creating an experience — one where time slows down, conversations flow, and comfort is brewed into every sip.<br><br>
+                        Whether you're a curious explorer, a daily regular, or someone searching for the perfect place to pause and recharge — you're always welcome here. Dive into our menu, discover your new favorite, and let the aroma of freshly brewed beans guide your senses.<br><br>
+                        At Abyssinia Coffee, you're not just a guest — you're part of our coffee family. 
+                        From the birthplace of coffee to your cup, our brews are handpicked, roasted with care, and served with love.
+                        Whether you're here for your morning espresso, a relaxing latte, or just a cozy space to unwind — you're in the right place.<br><br>
+                        Explore our menu, discover new flavors, and feel right at home.
+                        We're glad you're here.`
+
+    bottomContainer.appendChild(para2)
 }
 
-const createCoffeeSection = function(coffeeSec) {
+const createCoffeeSection = function (coffeeSec) {
     const header = document.createElement("h1")
     header.classList.add("coffee-header")
     header.textContent = "Our Favorites"
@@ -89,7 +111,7 @@ const createCoffeeSection = function(coffeeSec) {
     }
 }
 
-const createReviewSection = function(reviewSec) {
+const createReviewSection = function (reviewSec) {
     const header = document.createElement("h1")
     header.classList.add("review-header")
     header.textContent = "We have great reviews"
@@ -99,9 +121,9 @@ const createReviewSection = function(reviewSec) {
     reviewContainer.classList.add("review-container")
     reviewSec.appendChild(reviewContainer)
 
-    const UserReview = (name, review, rating) => {return { name, review, rating }}
+    const UserReview = (name, review, rating) => { return { name, review, rating } }
 
-    const generateReviewStars = function(rating, card) {
+    const generateReviewStars = function (rating, card) {
         console.log(rating)
         const button = document.createElement("span")
         button.classList.add("review-star-container")
@@ -109,14 +131,14 @@ const createReviewSection = function(reviewSec) {
 
         for (let i = 1; i <= rating; i++) {
             console.log(rating)
-            
+
             const image = document.createElement("img")
             image.classList.add("review-stars")
             image.src = star
-    
+
             button.appendChild(image)
         }
-    
+
     }
 
     const reviewList = {
@@ -153,7 +175,7 @@ const createReviewSection = function(reviewSec) {
         image.classList.add("reviewer-image")
         image.src = reviewerImg[index]
         index++
-        
+
 
         const reviewerName = document.createElement("h2")
         reviewerName.classList.add("reviewer-name")
